@@ -101,8 +101,8 @@
     "yjs": "^13.6.18"
   },
   "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@nomiclabs/hardhat-ethers": "^1.0.0",
+    "@nomiclabs/hardhat-waffle": "^1.0.0",
     "@svgr/webpack": "^8.0.1",
     "@types/mdx": "^2.0.12",
     "@types/node": "^20",
@@ -118,7 +118,7 @@
     "eslint-config-next": "15.0.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.0",
-    "ethers": "^5.7.2",
+    "ethers": "^6.13.4",
     "husky": "^9.0.0",
     "lint-staged": "^13.0.0",
     "postcss": "^8",
