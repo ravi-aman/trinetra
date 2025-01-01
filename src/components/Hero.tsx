@@ -48,7 +48,7 @@ export function ImagesSliderDemo() {
                     {/* Search Bar Section */}
                     <div className="w-full max-w-3xl px-4">
                         <form onSubmit={handleSubmit} className="space-y-4 rounded-lg p-4 shadow-lg">
-                            <div className="flex flex-row items-center rounded-[20px] overflow-hidden shadow-md">
+                            <div className="flex flex-row items-center rounded-[15px] overflow-hidden shadow-md">
                                 <input
                                     type="text"
                                     placeholder="Search for properties by name, location, or keyword..."
