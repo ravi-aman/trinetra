@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { ImagesSlider } from "@/components/ui/images-slider";
-
+type Tag = string;
 export function ImagesSliderDemo() {
     const images = [
         "/media/1.png",
@@ -12,20 +12,21 @@ export function ImagesSliderDemo() {
     ];
 
     const [searchQuery, setSearchQuery] = useState("");
-    const [selectedTags, setSelectedTags] = useState([]);
+    const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
     const tags = ["Rent", "Home", "Plot/Land", "Commercial", "Other"];
 
-    const toggleTag = (tag) => {
+    const toggleTag = (tag: Tag) => {
         setSelectedTags((prev) =>
             prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
         );
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault(); // Prevent the default form submission
         console.log("Search Query:", searchQuery);
         console.log("Selected Tags:", selectedTags);
     };
+
 
     return (
         <ImagesSlider className="h-[40rem]" images={images}>
@@ -47,7 +48,7 @@ export function ImagesSliderDemo() {
                     {/* Search Bar Section */}
                     <div className="w-full max-w-3xl px-4">
                         <form onSubmit={handleSubmit} className="space-y-4 rounded-lg p-4 shadow-lg">
-                            <div className="flex flex-row items-center rounded-lg overflow-hidden shadow-md">
+                            <div className="flex flex-row items-center rounded-[20px] overflow-hidden shadow-md">
                                 <input
                                     type="text"
                                     placeholder="Search for properties by name, location, or keyword..."
@@ -57,7 +58,7 @@ export function ImagesSliderDemo() {
                                 />
                                 <button
                                     type="submit"
-                                    className="bg-emerald-500 text-white px-6 py-3 font-semibold hover:bg-emerald-600 transition"
+                                    className="bg-yellow-600 text-white px-6 py-3 font-semibold hover:bg-emerald-600 transition"
                                 >
                                     Search
                                 </button>
@@ -72,7 +73,7 @@ export function ImagesSliderDemo() {
                                         onClick={() => toggleTag(tag)}
                                         className={`px-3 py-1 rounded-full border font-medium transition ${
                                             selectedTags.includes(tag)
-                                                ? "bg-emerald-500 text-white"
+                                                ? "bg-yellow-600 text-white"
                                                 : "bg-neutral-700 text-neutral-200"
                                         } hover:bg-emerald-400 hover:text-white`}
                                     >
