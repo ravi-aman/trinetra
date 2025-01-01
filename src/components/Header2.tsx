@@ -57,7 +57,7 @@ export const Header2 = () => {
                     </div>
                     <div className="flex items-center gap-2">
                         <FaEnvelope className="text-white" />
-                        <p className="text-white">tiwariravikant04@gmail.com</p>
+                        <a href="mailto:support@trinetra.tech"><p className="text-white">support@trinetra.tech</p></a>
                     </div>
                 </div>
 
@@ -118,27 +118,31 @@ export const Header2 = () => {
                                             <FaClock className="text-black" />
                                             <p className="text-black">Mon to Sat: 8.00 am - 7.00 pm</p>
                                         </div>
-
-                                        <Link href="#home" className="text-lg text-black hover:underline">
-                                            Home
-                                        </Link>
-                                        <Link href="#about" className="text-lg text-black hover:underline">
-                                            About
-                                        </Link>
-                                        <Link href="#events" className="text-lg text-black hover:underline">
-                                            Events
-                                        </Link>
-                                        <Link href="#members" className="text-lg text-black hover:underline">
-                                            Members
-                                        </Link>
-                                        <Link href="#blogs" className="text-lg text-black hover:underline">
-                                            Blogs
-                                        </Link>
+                                        <div>
+                                            <Link href="#home" className="text-lg text-black hover:underline">
+                                                Home
+                                            </Link>
+                                            <Link href="#about" className="text-lg text-black hover:underline">
+                                                About
+                                            </Link>
+                                            <Link href="#events" className="text-lg text-black hover:underline">
+                                                Events
+                                            </Link>
+                                            <Link href="#members" className="text-lg text-black hover:underline">
+                                                Members
+                                            </Link>
+                                            <Link href="#blogs" className="text-lg text-black hover:underline">
+                                                Blogs
+                                            </Link>
+                                        </div>
                                     </div>
                                 </SheetContent>
                             </Sheet>
 
-                            <nav className="hidden md:flex gap-6 text-black/60 items-center">
+                            <nav className="hidden md:flex gap-6 text-black/60 items-center w-full">
+                                <div>
+                                    <Image src="/Rk-white.png" alt="Saas Logo" height={40} width={40} />
+                                </div>
                                 <Link href="#home" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Home
                                 </Link>
@@ -166,19 +170,19 @@ export const Header2 = () => {
                             </nav>
                         </div>
                         {/* Right Section */}
-                        <div className="hidden md:flex gap-6 items-center">
+                        <div className="hidden md:flex gap-6 items-left justify-end w-full">
                             <div className="flex flex-col items-end">
-                                <div className="flex items-center gap-3">
-                                    <FaPhone className="h-10 w-10 text-white bg-blue-500 p-2 rounded-full transition duration-300 transform hover:scale-110 hover:bg-blue-600 shadow-lg hover:shadow-xl" />
-                                    <div className="flex flex-col border-r border-gray-300 pr-3">
+                                <div className="flex items-center gap-3 ">
+                                    <a href="8744883594"><FaPhone className="h-12 w-12 text-white bg-blue-500 p-2 rounded-full transition duration-300 transform hover:scale-110 hover:bg-blue-600 shadow-lg hover:shadow-xl" /></a>
+                                    <div className="flex flex-col border-r border-gray-300 pr-3 w-full">
                                         <p className="text-sm text-gray-500">Call us anytime</p>
                                         <p className="text-xl font-bold">+91 8744883594</p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <FaSearch className="h-6 w-6 text-gray-500 cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500 hover:shadow-lg" />
-                                <FaUserCircle className="h-6 w-6 text-gray-500 cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500 hover:shadow-lg" />
+                            <div className="flex gap-4 justify-center place-items-center">
+                                <a href="/user/search"><FaSearch className="h-6 w-6 text-gray-500 cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500 hover:shadow-lg" /></a>
+                                <a href=""><FaUserCircle className="h-6 w-6 text-gray-500 cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500 hover:shadow-lg" /></a>
                             </div>
                         </div>
                     </div>
