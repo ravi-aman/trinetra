@@ -91,10 +91,11 @@ export function ImagesSliderDemo() {
                     <motion.p className="font-bold text-3xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4 px-4">
                         Discover Your<br /><span className="text-yellow-500">Dream Property</span>
                     </motion.p>
-                    <motion.p className="text-lg md:text-xl text-center text-neutral-300 py-2 px-4">
-                        At <span className="font-semibold text-white">Trinetraa</span>, we connect you with the best homes, plots, and rental spaces, ensuring a seamless experience tailored to your needs.
-                    </motion.p>
-
+                    <div className="px-4">
+                        <motion.p className="text-lg md:text-xl text-center text-neutral-300 py-2 px-4">
+                            At <span className="font-semibold text-white">Trinetraa</span>, we connect you with the best homes, plots, and rental spaces, ensuring a seamless experience tailored to your needs.
+                        </motion.p>
+                    </div>
                     <div className="w-full max-w-3xl px-4">
                         <form onSubmit={handleSubmit} className="space-y-4 rounded-lg p-4 shadow-lg">
                             <div className="flex flex-row items-center rounded-[15px] overflow-hidden shadow-md">
