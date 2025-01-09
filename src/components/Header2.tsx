@@ -63,7 +63,8 @@ export const Header2 = () => {
 
                 <div className="flex items-center gap-3">
                     <FaClock />
-                    <p>Mon to Sat: 8.00 am - 7.00 pm</p>
+                    {/* <p>Mon to Sat: 8.00 am - 7.00 pm</p> */}
+                    <p>24/7 available</p>
 
                     <div className="icon flex text-white bg-blue-500 px-10 py-3 justify-between gap-5">
                         <a href="https://www.facebook.com/ravikant.tiwari.547727" target="_blank">
@@ -82,12 +83,12 @@ export const Header2 = () => {
                 </div>
             </div>
             {/* lower header */}
-            <div className="px-10 py-5 bg-slate-900 md:bg-gray-100 m-0">
+            <div className="px-10 py-5 bg-slate-900 md:bg-gray-100 m-0 w-full">
                 <div className="w-full m-0">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between w-full">
                         <div className="flex items-center w-full justify-between">
                             <div className="flex items-center">
-                                <Image src="/Rk-white.png" alt="Saas Logo" className="mr-10" height={40} width={40} />
+                                <Image src="/trinatraalandscape.png" alt="Saas Logo" className="mr-10" height={40} width={1000} />
                             </div>
                             <Sheet>
                                 <SheetTrigger asChild>
@@ -98,7 +99,7 @@ export const Header2 = () => {
                                 <SheetContent>
                                     <SheetHeader>
                                         <SheetTitle className="flex justify-center">
-                                            <Image src="/Rk-white.png" alt="Saas Logo" height={40} width={40} />
+                                            <Image src="/trinatraalandscape.png" alt="Saas Logo" height={40} width={40} />
                                         </SheetTitle>
                                     </SheetHeader>
 
@@ -116,8 +117,9 @@ export const Header2 = () => {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <FaClock className="text-black" />
-                                            <p className="text-black">Mon to Sat: 8.00 am - 7.00 pm</p>
-                                        </div>
+                                            {/* <p className="text-black">Mon to Sat: 8.00 am - 7.00 pm</p> */}
+                                            <p className="text-black">24/7</p>
+                                            </div>
                                         <div>
                                             <Link href="#home" className="text-lg text-black hover:underline">
                                                 Home
@@ -163,7 +165,7 @@ export const Header2 = () => {
                                 </Link>
                                 <button
                                     ref={buttonRef}
-                                    className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium tracking-tight inline-flex items-center justify-center w-[120px] hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"
+                                    className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium tracking-tight inline-flex items-center justify-center w-[120px] hover:bg-white hover:text-black transition-colors duration-300 ease-in-out w-full"
                                 >
                                     Contact Us
                                 </button>
