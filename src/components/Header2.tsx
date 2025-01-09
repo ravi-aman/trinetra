@@ -85,7 +85,7 @@ export const Header2 = () => {
                 <div className="w-full m-0">
                     <div className="flex items-center justify-between w-full">
                         <div className="flex items-center w-full justify-between">
-                            <div className="flex items-center">
+                            <div className="flex items-end justify-center">
                                 <Image src="/trinatraalandscape.png" alt="Trinetraa" className="mr-10 md:hidden" height={40} width={100} />
                                 <Image src="/trinatraalandscape.png" alt="Trinetraa" className="mr-10 hidden md:flex" height={40} width={1000} />
                             </div>
@@ -97,7 +97,7 @@ export const Header2 = () => {
                                 </SheetTrigger>
                                 <SheetContent>
                                     <SheetHeader>
-                                        <SheetTitle className="flex justify-center">
+                                        <SheetTitle className="flex justify-center items-center">
                                             <Image src="/trinatraalandscape.png" alt="Trinetraa" className="" height={40} width={100} />
                                         </SheetTitle>
                                     </SheetHeader>
@@ -144,10 +144,10 @@ export const Header2 = () => {
                                 </SheetContent>
                             </Sheet>
 
-                            <nav className="hidden md:flex gap-6 text-black/60 items-center w-full">
-                                <div>
+                            <nav className="hidden md:flex gap-6  items-center w-full">
+                                {/* <div>
                                     <Image src="/trinatraalandscape.png" alt="Trinetraa" height={40} width={40} />
-                                </div>
+                                </div> */}
                                 <Link href="#home" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Home
                                 </Link>
@@ -168,13 +168,13 @@ export const Header2 = () => {
                                 </Link>
                                 <button
                                     ref={buttonRef}
-                                    className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium tracking-tight inline-flex items-center justify-center w-[120px] hover:bg-white hover:text-black transition-colors duration-300 ease-in-out w-full"
+                                    className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium tracking-tight inline-flex items-center w-[120px] justify-center hover:bg-white hover:text-black transition-colors duration-300 ease-in-out "
                                 >
                                     Contact Us
                                 </button>
                             </nav>
                         </div>
-                        <div className="hidden md:flex gap-6 items-left justify-end w-full">
+                        <div className="hidden md:flex gap-6 items-left justify-end w-[100%]">
                             <div className="flex flex-col items-end">
                                 <div className="flex items-center gap-3 ">
                                     <a href="8744883594"><FaPhone className="h-12 w-12 text-white bg-blue-500 p-2 rounded-full transition duration-300 transform hover:scale-110 hover:bg-blue-600 shadow-lg hover:shadow-xl" /></a>
