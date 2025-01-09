@@ -8,10 +8,12 @@ type Tag = string;
 
 export function ImagesSliderDemo() {
     const images = [
-        "/media/1.png",
-        "/media/2.png",
-        "/media/3.png",
-        "/media/5.png",
+        "/media/1.jpg",
+        "/media/4.jpg",
+        "/media/5.jpg",
+        "/media/6.jpg",
+        "/media/7.jpg",
+        "/media/8.jpg",
     ];
 
     const [searchQuery, setSearchQuery] = useState<string>('');
@@ -123,7 +125,7 @@ export function ImagesSliderDemo() {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="bg-yellow-600 text-white px-6 py-3 font-semibold hover:bg-emerald-600 transition"
+                                    className="bg-yellow-600 text-white px-6 py-3 font-semibold hover:bg-slate-900 transition duration-500 ease-in-out"
                                 >
                                     Search
                                 </button>
@@ -137,8 +139,8 @@ export function ImagesSliderDemo() {
                                         onClick={() => toggleTag(tag)}
                                         className={`px-3 py-1 rounded-full border font-medium transition ${selectedTags.includes(tag)
                                             ? "bg-yellow-600 text-white"
-                                            : "bg-neutral-700 text-neutral-200"
-                                            } hover:bg-emerald-400 hover:text-white`}
+                                            : "bg-white/55  font-bold"
+                                            } hover:bg-slate-900 hover:text-white transition duration-500 ease-in-out border-slate-900`}
                                     >
                                         {tag}
                                     </button>
