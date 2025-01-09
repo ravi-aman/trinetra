@@ -22,12 +22,12 @@ if (!clerkKey) {
 }
 
 export const metadata: Metadata = {
-  title: "Stock market course", 
-  description: "a health care management system", 
+  title: "Trinetaa", 
+  description: "we provide all type residential and commercial space", 
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/Rk-white.png",
-    apple: "/Rk-white.png",
+    icon: "/public//favicon.ico",
+    shortcut: "/trinatraalandscape.png",
+    apple: "/trinatraalandscape.png",
   },
 };
 
