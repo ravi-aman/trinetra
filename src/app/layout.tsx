@@ -42,6 +42,7 @@ export default function RootLayout({
             src="https://www.facebook.com/tr?id=1313164989825143&ev=PageView&noscript=1"
           />
         </noscript>
+        {/* End Facebook Pixel Code */}
       </head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col bg-slate-100">
