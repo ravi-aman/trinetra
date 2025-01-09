@@ -83,44 +83,32 @@ export const Header2 = () => {
                 </div>
             </div>
             {/* lower header */}
-            <div className="px-10 py-5 bg-slate-900 md:bg-gray-100 m-0 w-full">
+            <div className="px-10 py-5  md:bg-gray-100 m-0 w-full">
                 <div className="w-full m-0">
                     <div className="flex items-center justify-between w-full">
                         <div className="flex items-center w-full justify-between">
                             <div className="flex items-center">
-                                <Image src="/trinatraalandscape.png" alt="Saas Logo" className="mr-10" height={40} width={1000} />
+                                <Image src="/trinatraalandscape.png" alt="Trinetraa" className="mr-10 md:hidden" height={40} width={100} />
+                                <Image src="/trinatraalandscape.png" alt="Trinetraa" className="mr-10 hidden md:flex" height={40} width={1000} />
                             </div>
                             <Sheet>
                                 <SheetTrigger asChild>
                                     <span>
-                                        <FaBars className="h-5 w-5 md:hidden cursor-pointer text-white" />
+                                        <FaBars className="h-5 w-5 md:hidden cursor-pointer text-slate-900" />
                                     </span>
                                 </SheetTrigger>
                                 <SheetContent>
                                     <SheetHeader>
                                         <SheetTitle className="flex justify-center">
-                                            <Image src="/trinatraalandscape.png" alt="Saas Logo" height={40} width={40} />
+                                            <Image src="/trinatraalandscape.png" alt="Trinetraa" className="" height={40} width={100} />
                                         </SheetTitle>
                                     </SheetHeader>
 
                                     {/* Added upper header content to the sheet */}
-                                    <div className="flex flex-col items-center gap-4 mt-6">
-                                        <div className="flex items-center gap-2">
-                                            <FaMapMarkerAlt className="text-black" />
-                                            <p className="text-black/60">
-                                                Mohan Garden, Uttam Nagar, New Delhi, 110059
-                                            </p>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <FaEnvelope className="text-black" />
-                                            <p className="text-black">tiwariravikant04@gmail.com</p>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <FaClock className="text-black" />
-                                            {/* <p className="text-black">Mon to Sat: 8.00 am - 7.00 pm</p> */}
-                                            <p className="text-black">24/7</p>
-                                            </div>
-                                        <div>
+                                    <div className="flex flex-col items-center gap-4 mt-6 justify-around min-h-screen">
+
+
+                                        <div className="flex flex-col text-[4xl] gap-10">
                                             <Link href="#home" className="text-lg text-black hover:underline">
                                                 Home
                                             </Link>
@@ -137,13 +125,31 @@ export const Header2 = () => {
                                                 Blogs
                                             </Link>
                                         </div>
+                                        <div>
+                                            <div className="flex items-center gap-2">
+                                                <FaClock className="text-black" />
+                                                {/* <p className="text-black">Mon to Sat: 8.00 am - 7.00 pm</p> */}
+                                                <p className="text-black">24/7 available</p>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <FaEnvelope className="text-black" />
+                                                <p className="text-black">tiwariravikant04@gmail.com</p>
+                                            </div>
+
+                                            <div className="flex items-center gap-2">
+                                                <FaMapMarkerAlt className="text-black" />
+                                                <p className="text-black/60">
+                                                    Mohan Garden, Uttam Nagar, New Delhi, 110059
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </SheetContent>
                             </Sheet>
 
                             <nav className="hidden md:flex gap-6 text-black/60 items-center w-full">
                                 <div>
-                                    <Image src="/Rk-white.png" alt="Saas Logo" height={40} width={40} />
+                                    <Image src="/trinatraalandscape.png" alt="Trinetraa" height={40} width={40} />
                                 </div>
                                 <Link href="#home" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Home
