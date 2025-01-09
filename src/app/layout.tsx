@@ -19,8 +19,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/Rk-white.png" />
         <link rel="shortcut icon" href="/Rk-white.png" />
-        {/* Meta Pixel Code */}
-        <Script id="fb-pixel" strategy="afterInteractive">
+        {/* Facebook Meta Pixel Code */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -30,7 +30,7 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1313164989825143');
+            fbq('init', '642432001448776');
             fbq('track', 'PageView');
           `}
         </Script>
@@ -39,10 +39,10 @@ export default function RootLayout({
             height="1"
             width="1"
             style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1313164989825143&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=642432001448776&ev=PageView&noscript=1"
           />
         </noscript>
-        {/* End Facebook Pixel Code */}
+        {/* End Facebook Meta Pixel Code */}
       </head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col bg-slate-100">
