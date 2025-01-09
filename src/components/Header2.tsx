@@ -46,7 +46,6 @@ export const Header2 = () => {
     }, []);
     return (
         <header className="backdrop-blur-sm z-20 ">
-            {/* upper header */}
             <div className="hidden md:flex justify-between items-center bg-slate-900 text-white text-sm gap-6 px-10">
                 <div className="flex items-center gap-5">
                     <div className="flex items-center gap-2">
@@ -82,7 +81,6 @@ export const Header2 = () => {
                     </div>
                 </div>
             </div>
-            {/* lower header */}
             <div className="px-10 py-5  md:bg-gray-100 m-0 w-full">
                 <div className="w-full m-0">
                     <div className="flex items-center justify-between w-full">
@@ -104,7 +102,6 @@ export const Header2 = () => {
                                         </SheetTitle>
                                     </SheetHeader>
 
-                                    {/* Added upper header content to the sheet */}
                                     <div className="flex flex-col items-center gap-4 mt-6 justify-around min-h-screen">
 
 
@@ -177,7 +174,6 @@ export const Header2 = () => {
                                 </button>
                             </nav>
                         </div>
-                        {/* Right Section */}
                         <div className="hidden md:flex gap-6 items-left justify-end w-full">
                             <div className="flex flex-col items-end">
                                 <div className="flex items-center gap-3 ">
