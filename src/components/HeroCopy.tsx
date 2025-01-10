@@ -104,45 +104,70 @@ export function HeroCopy() {
                         </div>
                     </div>
                     <div className="w-full max-w-3xl px-4">
-                        <div className="max-w-md w-full mx-auto  rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+                        <div className="max-w-md w-full mx-auto rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
                             <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200 mt-5">
-                                Book a Free Call
+                                Schedule Your Free Consultation
                             </h2>
                             <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-                                Find available blood supplies in hospitals near you.
+                                Let us assist you! Book a free call to explore the best solutions tailored to your needs.
                             </p>
 
-                            <form className="my-8 md:my-5 flex flex-col gap-2" onSubmit={handleSubmit}>
+                            <form className="my-8 md:my-5 flex flex-col gap-4" onSubmit={handleSubmit}>
                                 <LabelInputContainer>
-                                    <Label htmlFor="name">Your Name <span className="text-red-600">*</span></Label>
-                                    <Input id="name" placeholder="Enter your Name" type="text" required />
+                                    <Label htmlFor="name">
+                                        Your Full Name <span className="text-red-600">*</span>
+                                    </Label>
+                                    <Input
+                                        id="name"
+                                        placeholder="Enter your full name"
+                                        type="text"
+                                        required
+                                    />
                                 </LabelInputContainer>
 
                                 <LabelInputContainer>
-                                    <Label htmlFor="number">Phone No <span className="text-red-600">*</span></Label>
-                                    <Input id="number" placeholder="Enter your primary Name" type="number" required />
+                                    <Label htmlFor="number">
+                                        Phone Number <span className="text-red-600">*</span>
+                                    </Label>
+                                    <Input
+                                        id="number"
+                                        placeholder="Enter your phone number"
+                                        type="number"
+                                        required
+                                    />
                                 </LabelInputContainer>
 
                                 <LabelInputContainer>
-                                    <Label htmlFor="email">Email Id <span className="text-red-600">*</span></Label>
-                                    <Input id="email" placeholder="Enter your Email id" type="email" required />
+                                    <Label htmlFor="email">
+                                        Email Address <span className="text-red-600">*</span>
+                                    </Label>
+                                    <Input
+                                        id="email"
+                                        placeholder="Enter your email address"
+                                        type="email"
+                                        required
+                                    />
                                 </LabelInputContainer>
 
-                                <LabelInputContainer className="mb-4">
-                                    <Label htmlFor="availability">Availability </Label>
-                                    <Input id="availability" placeholder="Available time" className="" type="date"/>
+                                <LabelInputContainer>
+                                    <Label htmlFor="availability">Preferred Time</Label>
+                                    <Input
+                                        id="availability"
+                                        placeholder="Select your available time"
+                                        type="date"
+                                    />
                                 </LabelInputContainer>
 
                                 <button
                                     className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                                     type="submit"
                                 >
-                                    Book a Free Call &rarr;
+                                    Book Your Free Call &rarr;
                                     <BottomGradient />
                                 </button>
                             </form>
-
                         </div>
+
 
                     </div>
                 </div>
