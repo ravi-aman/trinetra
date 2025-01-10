@@ -124,7 +124,7 @@ export const Header2 = () => {
                                         </SheetTitle>
                                     </SheetHeader>
 
-                                    <div className="flex flex-col items-center gap-4 mt-6 justify-around min-h-screen">
+                                    <div className="flex flex-col items-center gap-4 mt-6 justify-around h-[90vh]">
 
 
                                         <div className="flex flex-col text-[4xl] gap-10">
@@ -152,7 +152,7 @@ export const Header2 = () => {
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <FaEnvelope className="text-black" />
-                                                <p className="text-black">tiwariravikant04@gmail.com</p>
+                                                <p className="text-black">support@trinetraa.tech</p>
                                             </div>
 
                                             <div className="flex items-center gap-2">
