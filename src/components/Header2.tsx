@@ -66,16 +66,16 @@ export const Header2 = () => {
                     <p>24/7 available</p>
 
                     <div className="icon flex text-white bg-blue-500 px-10 py-3 justify-between gap-5">
-                        <a href="https://www.facebook.com/ravikant.tiwari.547727" target="_blank">
+                        <a href="https://www.facebook.com/ravikant.tiwari.547727" target="_blank " className="hover:text-blue-900">
                             <FaFacebookF className="w-50" />
                         </a>
-                        <a href="https://www.instagram.com/ravikanttiwari04/" target="_blank">
+                        <a href="https://www.instagram.com/trinetraa.tec/" target="_blank"  className="hover:text-blue-900">
                             <FaInstagram />
                         </a>
-                        <a href="https://www.linkedin.com/in/ravikant-tiwari-6b4b6a1b4/" target="_blank">
+                        <a href="https://www.linkedin.com/in/ravikant-tiwari-6b4b6a1b4/" target="_blank"  className="hover:text-blue-900">
                             <FaLinkedin />
                         </a>
-                        <a href="https://twitter.com/Ravikan69319285" target="_blank">
+                        <a href="https://twitter.com/Ravikan69319285" target="_blank"  className="hover:text-blue-900">
                             <FaTwitter />
                         </a>
                     </div>
@@ -87,7 +87,7 @@ export const Header2 = () => {
                         <div className="flex items-center w-full justify-between">
                             <div className="flex items-end justify-center">
                                 <Image src="/trinatraalandscape.png" alt="Trinetraa" className="mr-10 md:hidden" height={40} width={100} />
-                                <Image src="/trinatraalandscape.png" alt="Trinetraa" className="mr-10 hidden md:flex" height={40} width={1000} />
+                                <Image src="/trinatraalandscape.png" alt="Trinetraa" className="mr-10 hidden md:flex" height={40} width={120} />
                             </div>
                             <Sheet>
                                 <SheetTrigger asChild>
@@ -110,7 +110,7 @@ export const Header2 = () => {
                                                 Home
                                             </Link>
                                             <Link href="#about" className="text-lg text-black hover:underline">
-                                                About
+                                                About Us
                                             </Link>
                                             <Link href="#events" className="text-lg text-black hover:underline">
                                                 Events
@@ -152,13 +152,13 @@ export const Header2 = () => {
                                     Home
                                 </Link>
                                 <Link href="#about" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
-                                    About us
+                                    About Us
                                 </Link>
                                 <Link href="#blogs" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Blogs
                                 </Link>
                                 <Link href="#contact" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
-                                    Events
+                                    Event
                                 </Link>
                                 <button
                                     ref={buttonRef}
