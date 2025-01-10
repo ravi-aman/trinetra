@@ -8,16 +8,18 @@ import Benefits from "@/components/Benifits";
 import ContactForm from "@/components/ContactForm";
 import Testimonials from "@/components/testimonials";
 import Courses from "@/components/Courses";
+import HeroCopy from "@/components/HeroCopy";
 export default function Home() {
   return (
     <main className="flex  flex-col justify-center items-center ">
 
-      <ImagesSliderDemo />
+      {/* <ImagesSliderDemo /> */}
+      <HeroCopy />
       {/* <Service /> */}
       {/* <RecomendedVideo/> */}
       <Features />
       <Benefits />
-      <Courses/>
+      <Courses />
       <CallToAction />
       <Statistics />
       <Testimonials />

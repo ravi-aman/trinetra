@@ -1,6 +1,5 @@
 "use client";
-
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,38 +11,61 @@ import {
     SheetHeader,
     SheetTitle,
 } from "@/components/ui/sheet";
-
+import QuoteForm from "@/components/QuoteForm";
 import { FaMapMarkerAlt, FaEnvelope, FaClock, FaPhone } from "react-icons/fa";
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FaSearch, FaUserCircle } from "react-icons/fa";
 
 export const Header2 = () => {
-    const buttonRef = useRef<HTMLButtonElement>(null);
 
+    const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const handleOpenQuoteForm = () => setIsQuoteOpen(true);
+    const handleCloseQuoteForm = () => setIsQuoteOpen(false);
+
+
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    // const buttonRef = useRef();
+
+    const handleButtonClick = () => {
+        setIsFormOpen(true); // Open the form
+    };
+
+    const handleCloseForm = () => {
+        setIsFormOpen(false); // Close the form
+    };
+
+    useEffect(() => {
+        const button = buttonRef.current;
+        if (button) {
+            const handleMouseEnter = () => {
+                gsap.to(button, { scale: 1.05, duration: 0.2 });
+            };
+
+            const handleMouseLeave = () => {
+                gsap.to(button, { scale: 1, duration: 0.2 });
+            };
+
+            button.addEventListener("mouseenter", handleMouseEnter);
+            button.addEventListener("mouseleave", handleMouseLeave);
+
+            // Cleanup function to remove event listeners
+            return () => {
+                button.removeEventListener("mouseenter", handleMouseEnter);
+                button.removeEventListener("mouseleave", handleMouseLeave);
+            };
+        }
+    }, []);
     useEffect(() => {
         const button = buttonRef.current;
         if (button) {
             gsap.fromTo(
                 button,
                 { scale: 1 },
-                {
-                    scale: 1.05,
-                    duration: 0.2,
-                    ease: "power1.inOut",
-                    paused: true,
-                    onHover: true,
-                    overwrite: "auto",
-                }
+                { scale: 1.05, duration: 0.2, ease: "power1.inOut", paused: true }
             );
-            button.addEventListener("mouseenter", () => {
-                gsap.to(button, { scale: 1.05, duration: 0.2 });
-            });
-
-            button.addEventListener("mouseleave", () => {
-                gsap.to(button, { scale: 1, duration: 0.2 });
-            });
         }
-    }, []);
+    }, [isFormOpen]);
     return (
         <header className="backdrop-blur-sm z-20 ">
             <div className="hidden md:flex justify-between items-center bg-slate-900 text-white text-sm gap-6 px-10">
@@ -69,13 +91,13 @@ export const Header2 = () => {
                         <a href="https://www.facebook.com/ravikant.tiwari.547727" target="_blank " className="hover:text-blue-900">
                             <FaFacebookF className="w-50" />
                         </a>
-                        <a href="https://www.instagram.com/trinetraa.tec/" target="_blank"  className="hover:text-blue-900">
+                        <a href="https://www.instagram.com/trinetraa.tec/" target="_blank" className="hover:text-blue-900">
                             <FaInstagram />
                         </a>
-                        <a href="https://www.linkedin.com/in/ravikant-tiwari-6b4b6a1b4/" target="_blank"  className="hover:text-blue-900">
+                        <a href="https://www.linkedin.com/in/ravikant-tiwari-6b4b6a1b4/" target="_blank" className="hover:text-blue-900">
                             <FaLinkedin />
                         </a>
-                        <a href="https://twitter.com/Ravikan69319285" target="_blank"  className="hover:text-blue-900">
+                        <a href="https://twitter.com/Ravikan69319285" target="_blank" className="hover:text-blue-900">
                             <FaTwitter />
                         </a>
                     </div>
@@ -160,12 +182,16 @@ export const Header2 = () => {
                                 <Link href="#contact" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Event
                                 </Link>
-                                <button
-                                    ref={buttonRef}
-                                    className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium tracking-tight inline-flex items-center w-[120px] justify-center hover:bg-white hover:text-black transition-colors duration-300 ease-in-out "
-                                >
-                                    Contact Us
-                                </button>
+                                <div>
+                                    <button
+                                        ref={buttonRef}
+                                        className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium tracking-tight inline-flex items-center w-[120px] justify-center hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"
+                                        onClick={handleButtonClick}
+                                    >
+                                        Contact Us
+                                    </button>
+
+                                </div>
                             </nav>
                         </div>
                         <div className="hidden md:flex gap-6 items-left justify-end w-[100%]">
@@ -186,6 +212,11 @@ export const Header2 = () => {
                     </div>
                 </div>
             </div>
+            {isFormOpen && (
+                <div id="quote-form-container">
+                    <QuoteForm onClose={handleCloseForm} />
+                </div>
+            )}
         </header>
     );
 };
