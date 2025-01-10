@@ -9,6 +9,7 @@ import ContactForm from "@/components/ContactForm";
 import Testimonials from "@/components/testimonials";
 import Courses from "@/components/Courses";
 import HeroCopy from "@/components/HeroCopy";
+import LandingPropertyResultComponent from "@/components/landingTopProperty";
 export default function Home() {
   return (
     <main className="flex  flex-col justify-center items-center ">
@@ -18,8 +19,9 @@ export default function Home() {
       {/* <Service /> */}
       {/* <RecomendedVideo/> */}
       <Features />
-      <Benefits />
-      <Courses />
+      {/* <Benefits /> */}
+      <LandingPropertyResultComponent/>
+      {/* <Courses /> */}
       <CallToAction />
       <Statistics />
       <Testimonials />
