@@ -152,19 +152,13 @@ export const Header2 = () => {
                                     Home
                                 </Link>
                                 <Link href="#about" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
-                                    About
-                                </Link>
-                                <Link href="#events" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
-                                    Courses
-                                </Link>
-                                <Link href="#members" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
-                                    Mentor
+                                    About us
                                 </Link>
                                 <Link href="#blogs" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Blogs
                                 </Link>
                                 <Link href="#contact" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
-                                    Webinars
+                                    Events
                                 </Link>
                                 <button
                                     ref={buttonRef}
