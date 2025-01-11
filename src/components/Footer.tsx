@@ -25,8 +25,8 @@ function Footer() {
                         </Link>
                     </div>
                 </div>
-                <div className="flex justify-between mb-12 border-t-[1px] pt-12 w-full">
-                    <div className='flex flex-row w-full justify-between'>
+                <div className="flex flex-col md:flex-row justify-between mb-12 border-t-[1px] pt-12 w-full">
+                    <div className='flex md:flex-row w-full justify-between'>
                         <div>
                             <h3 className="text-lg font-bold mb-4">Links</h3>
                             <ul className="space-y-2 text-black font-bold">
