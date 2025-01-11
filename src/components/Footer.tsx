@@ -63,7 +63,7 @@ function Footer() {
                                 <div className="relative w-full">
                                     <input
                                         type="text"
-                                        placeholder="Enter your email address..."
+                                        placeholder="email address..."
                                         className="flex-1 bg-transparent border-none outline-none w-full bg-white placeholder-neutral-400 px-4 py-3"
                                     />
                                 </div>
