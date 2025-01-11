@@ -14,7 +14,7 @@ const blogData = [
             "Discover the most promising locations for real estate investments. Learn why these areas are booming and how you can benefit.",
         imageSrc: "/media/1.jpg",
         containerClassName: "col-span-1 lg:col-span-2 h-full bg-blue-700  lg:min-h-[200px]",
-        imageClassName: "absolute -right-4 lg:-right-[30%] grayscale filter -bottom-10 object-contain rounded-2xl",
+        imageClassName: "absolute -right-[30%] lg:-right-[30%] grayscale filter lg:-bottom-10 object-contain rounded-2xl",
     },
     {
         title: "The Ultimate Guide to Buying Your First Home",
@@ -39,7 +39,7 @@ function LatestBlog() {
         <div className="mx-3">
             <div className="my-10">
                 {/* Title Section */}
-                <h2 className="max-w-7xl pl-4 my-20 text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+                <h2 className="max-w-7xl pl-4 my-20 text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
                     Read Our Latest Real Estate Insights
                 </h2>
 
