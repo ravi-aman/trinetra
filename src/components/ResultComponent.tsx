@@ -147,7 +147,7 @@ function BlogComponent() {
 
                             </div>
                             <button className='mt-4 text black font-bold'>
-                                <a href={blog.link}>Read more -></a>
+                                <a href={blog.link}>Read more  &rarr;</a>
                             </button>
                         </div>
                     </div>
