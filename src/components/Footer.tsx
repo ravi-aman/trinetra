@@ -25,28 +25,30 @@ function Footer() {
                         </Link>
                     </div>
                 </div>
-                <div className="flex flex-col md:flex-row justify-between mb-12 border-t-[1px] pt-12 w-full">
-                    <div className='flex md:flex-row w-full justify-between'>
-                        <div>
-                            <h3 className="text-lg font-bold mb-4">Links</h3>
-                            <ul className="space-y-2 text-black font-bold">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="#">Blogs</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">policies</h3>
-                            <ul className="space-y-2 text-black font-bold">
-                                <li><a href="#">Privecy polices</a></li>
-                                <li><a href="#">Disclamer</a></li>
-                                <li><a href="#">Terms & Condition</a></li>
+                <div className="flex flex-col md:flex-row justify-between mb-12 border-t-[1px] pt-12 w-full gap-10">
+                    <div className='flex flex-col gap-10 md:flex-row w-full justify-between'>
+                        <div className='flex flex-row space-y-4 w-full justify-between pr-20 items-start'>
+                            <div>
+                                <h3 className="text-lg font-bold mb-4">Links</h3>
+                                <ul className="space-y-2 text-black font-bold">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Events</a></li>
+                                    <li><a href="#">Blogs</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div className='flex items-start flex-col'>
+                                <h3 className="text-lg font-semibold mb-4">policies</h3>
+                                <ul className="space-y-2 text-black font-bold">
+                                    <li><a href="#">Privecy polices</a></li>
+                                    <li><a href="#">Disclamer</a></li>
+                                    <li><a href="#">Terms & Condition</a></li>
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                        <div className='font-bold '>
+                        <div className='font-bold justify-center w-full'>
                             <h3 className="text-lg font-semibold mb-4">Contact</h3>
                             <div className='text-black'>
                                 <p className="mb-2">A-67,vijay Nagar Mohan Garden</p>
@@ -57,9 +59,9 @@ function Footer() {
                         </div>
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+                        <h3 className="text-lg font-semibold mb-4 ">Newsletter</h3>
                         <div className="flex">
-                        <div className="flex flex-row items-center rounded-[15px] overflow-hidden shadow-md w-full">
+                            <div className="flex flex-row items-center rounded-[15px] overflow-hidden shadow-md w-full">
                                 <div className="relative w-full">
                                     <input
                                         type="text"
@@ -82,9 +84,9 @@ function Footer() {
             <div>
 
                 <div className="flex justify-center text-center text-gray-400 text-sm  p-5 bg-black w-full gap-10">
-                    <a href="">Privecy Policy</a>
-                    <a href="">Terms and conditions</a>
-                    <a href="Disclaimer">Disclaimer</a>
+                    <a href="#" className='hidden md:flex'>Privecy Policy</a>
+                    <a href="#" className='hidden md:flex'>Terms and conditions</a>
+                    <a href="#" className='hidden md:flex'>Disclaimer</a>
                     <div>
                         Copyright © 2024 - All Rights Reserved By WFI
                     </div>
