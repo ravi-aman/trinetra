@@ -68,7 +68,7 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <div className="flex min-h-screen flex-col bg-slate-100 overflow-hidden">
+        <div className="min-h-screen flex-col bg-slate-100 hidden">
           <main >{children}</main>
         </div>
       </body>

@@ -128,21 +128,25 @@ export const Header2 = () => {
 
 
                                         <div className="flex flex-col text-[4xl] gap-10">
-                                            <Link href="#home" className="text-lg text-black hover:underline">
+                                            <Link href="/" className="text-lg text-black hover:underline">
                                                 Home
                                             </Link>
-                                            <Link href="#about" className="text-lg text-black hover:underline">
+                                            <Link href="/user/about" className="text-lg text-black hover:underline">
                                                 About Us
                                             </Link>
-                                            <Link href="#events" className="text-lg text-black hover:underline">
+                                            <Link href="/user/events" className="text-lg text-black hover:underline">
                                                 Events
                                             </Link>
-                                            <Link href="#members" className="text-lg text-black hover:underline">
-                                                Members
+                                            <Link href="/user/blogs" className="text-lg text-black hover:underline">
+                                                Bloges
                                             </Link>
-                                            <Link href="#blogs" className="text-lg text-black hover:underline">
-                                                Blogs
-                                            </Link>
+                                            <button
+                                                ref={buttonRef}
+                                                className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium tracking-tight inline-flex items-center w-[120px] justify-center hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"
+                                                onClick={handleButtonClick}
+                                            >
+                                                Contact Us
+                                            </button>
                                         </div>
                                         <div>
                                             <div className="flex items-center gap-2">
@@ -170,16 +174,16 @@ export const Header2 = () => {
                                 {/* <div>
                                     <Image src="/trinatraalandscape.png" alt="Trinetraa" height={40} width={40} />
                                 </div> */}
-                                <Link href="#home" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
+                                <Link href="/" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Home
                                 </Link>
-                                <Link href="#about" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
+                                <Link href="/user/about" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     About Us
                                 </Link>
-                                <Link href="#blogs" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
+                                <Link href="/user/blogs" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Blogs
                                 </Link>
-                                <Link href="#contact" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
+                                <Link href="/user/events" className="hover:text-black/90 hover:underline transition-all duration-200 ease-in-out">
                                     Event
                                 </Link>
                                 <div>
