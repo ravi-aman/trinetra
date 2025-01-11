@@ -1,62 +1,60 @@
 import React from 'react';
+import { TagIcon } from 'lucide-react'; // Icons for categories and trending blogs
+
+const categories = [
+    { id: 1, name: "Real Estate Consultancy", count: 10, link: "1" },
+    { id: 2, name: "Property Management", count: 20, link: "2" },
+];
+
+const trendingBlogs = [
+    { id: 1, title: 'The Future of Real Estate: Emerging Trends for 2025', publishDate: '2025-01-10' },
+    { id: 2, title: 'Maximizing ROI in Property Investment', publishDate: '2025-01-09' },
+    { id: 3, title: 'Top 5 Real Estate Markets to Watch', publishDate: '2025-01-08' },
+    { id: 4, title: 'Understanding Property Valuation: Key Insights', publishDate: '2025-01-07' },
+    { id: 5, title: 'Smart Home Technology in Real Estate', publishDate: '2025-01-06' },
+];
 
 function FilterComponent() {
     return (
-        <div className="bg-slate-100 shadow-md rounded-lg p-6">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Filters</h2>
-            <form>
-                <div className="mb-4">
-                    <label htmlFor="hospitalName" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Hospital Name</label>
-                    <input
-                        id="hospitalName"
-                        type="text"
-                        placeholder="Search by hospital name"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-600"
-                    />
+        <div className="bg-white shadow-lg rounded-lg p-6 space-y-6 max-w-sm">
+            <div>
+                <h2 className="text-lg font-semibold text-gray-800 mb-4">CATEGORIES</h2>
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+                    {categories.map((category) => (
+                        <a
+                            key={category.id}
+                            href={category.link}
+                            className="flex items-center justify-between bg-gray-100 dark:bg-gray-800 p-3 rounded-lg hover:bg-blue-100 transition duration-200"
+                        >
+                            <div className="flex items-center space-x-3">
+                                <TagIcon className="w-5 h-5 text-blue-500" />
+                                <span className="text-gray-700 dark:text-gray-300">{category.name}</span>
+                            </div>
+                            <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+                                {category.count}
+                            </span>
+                        </a>
+                    ))}
                 </div>
+            </div>
 
-                <div className="mb-4">
-                    <label htmlFor="facilityType" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Facility Type</label>
-                    <select
-                        id="facilityType"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-600"
-                    >
-                        <option>All Facilities</option>
-                        <option>ICU</option>
-                        <option>General Ward</option>
-                        <option>Private Room</option>
-                    </select>
+            {/* Trending Blogs Section */}
+            <div>
+                <h2 className="text-lg font-semibold text-gray-800 mb-4">TRENDING BLOGS</h2>
+                <div className="space-y-4">
+                    {trendingBlogs.map((blog) => (
+                        <div
+                            key={blog.id}
+                            className="flex items-center justify-between bg-gray-100 dark:bg-gray-800 p-3 rounded-lg hover:bg-blue-100 transition duration-200"
+                        >
+                            <div>
+                                <h3 className="text-gray-800 dark:text-gray-200 font-medium">{blog.title}</h3>
+                                <p className="text-gray-500 text-sm">{blog.publishDate}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-
-                <div className="mb-4">
-                    <label htmlFor="priceRange" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Price Range</label>
-                    <input
-                        id="priceRange"
-                        type="range"
-                        min="0"
-                        max="10000"
-                        step="100"
-                        className="w-full"
-                    />
-                </div>
-
-                <div className="mb-4">
-                    <label htmlFor="equipment" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Equipment</label>
-                    <input
-                        id="equipment"
-                        type="text"
-                        placeholder="Search by equipment"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-600"
-                    />
-                </div>
-
-                <button
-                    type="submit"
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-600"
-                >
-                    Apply Filters
-                </button>
-            </form>
+            </div>
         </div>
     );
 }

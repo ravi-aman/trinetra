@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import FAQ from "./Faq";
 
-// Define the component
 export const ContactForm = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

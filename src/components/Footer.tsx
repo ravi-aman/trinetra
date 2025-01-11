@@ -38,8 +38,8 @@ function Footer() {
                                     <li><a href="#">Contact</a></li>
                                 </ul>
                             </div>
-                            <div className='flex justify-center items-start flex-col h-full'>
-                                <h3 className="text-lg font-semibold mb-4">Policies</h3>
+                            <div className='flex justify-start items-start flex-col h-full '>
+                                <h3 className="text-lg font-semibold mb-4 ">Policies</h3>
                                 <ul className="space-y-2 text-black font-bold">
                                     <li><a href="#">Privecy polices</a></li>
                                     <li><a href="#">Disclamer</a></li>
