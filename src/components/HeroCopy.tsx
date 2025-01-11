@@ -106,7 +106,7 @@ export function HeroCopy() {
                     <div className="w-full max-w-3xl px-4">
                         <div className="max-w-md w-full mx-auto rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
                             <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200 mt-5">
-                                Schedule Your Free Consultation
+                                Schedule Your Free Call
                             </h2>
                             <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
                                 Let us assist you! Book a free call to explore the best solutions tailored to your needs.

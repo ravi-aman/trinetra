@@ -55,7 +55,7 @@ export const Statistics = () => {
             <div className="flex flex-col md:flex-row w-full justify-center items-center md:mx-20 md:gap-20">
                 <div className="relative z-10 max-w-[700px] text-center md:text-left  flex flex-col justify-center items-center md:items-start m-auto p-5">
                     <h1 className="text-white text-4xl md:text-6xl font-bold ">
-                        Discover <span className="text-yellow-600">Premium Residential & Commercial Space </span>in affordable  with  Trinetraa
+                        Discover <br/> <span className="text-yellow-600">Premium Residential & Commercial Space </span>in affordable  with  Trinetraa
                     </h1>
                     <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
                         Contact us now

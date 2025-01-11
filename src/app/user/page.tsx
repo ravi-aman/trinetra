@@ -10,6 +10,7 @@ import Testimonials from "@/components/testimonials";
 import Courses from "@/components/Courses";
 import HeroCopy from "@/components/HeroCopy";
 import LandingPropertyResultComponent from "@/components/landingTopProperty";
+import { AnimatedTestimonialsDemo } from "@/components/teamMember";
 export default function Home() {
   return (
     <main className="flex  flex-col justify-center items-center ">
@@ -24,7 +25,7 @@ export default function Home() {
       {/* <Courses /> */}
       <CallToAction />
       <Statistics />
-      <Testimonials />
+      <AnimatedTestimonialsDemo/>
       <ContactForm />
       <LatestBLog />
     </main>

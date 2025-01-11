@@ -2,43 +2,45 @@
 import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "../ui/wobble-card";
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Mail, Check } from "lucide-react"
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Mail, Check } from "lucide-react";
+
 // Array to store blog data dynamically
 const blogData = [
     {
-        title: "Market Analysis: Navigating the Stock Market in 2024",
+        title: "Top Locations to Invest in Real Estate in 2024",
         description:
-            "Gain insights into current market trends, key indicators, and expert strategies to make informed investment decisions.",
-        imageSrc: "/media/3.png",
-        containerClassName: "col-span-1 lg:col-span-2 h-full bg-purple-700 min-h-[500px] lg:min-h-[300px]",
+            "Discover the most promising locations for real estate investments. Learn why these areas are booming and how you can benefit.",
+        imageSrc: "/media/1.jpg",
+        containerClassName: "col-span-1 lg:col-span-2 h-full bg-blue-700  lg:min-h-[200px]",
         imageClassName: "absolute -right-4 lg:-right-[30%] grayscale filter -bottom-10 object-contain rounded-2xl",
     },
     {
-        title: "Stock Market Outlook: What to Expect in the Coming Months",
+        title: "The Ultimate Guide to Buying Your First Home",
         description:
-            "Explore potential market movements, economic factors, and industry trends that could impact your investments.",
-        imageSrc: "",
-        containerClassName: "col-span-1 min-h-[300px] bg-teal-600",
-        imageClassName: "",
+            "Step-by-step guidance for first-time homebuyers, including tips on budgeting, mortgages, and selecting the perfect property.",
+        imageSrc: "/media/2.jpg",
+        containerClassName: "col-span-1 min-h-[300px] bg-blue-900",
+        imageClassName: "absolute -right-4 lg:-right-[40%] top-[80%] grayscale filter -bottom-10 object-contain rounded-2xl",
     },
-    // {
-    //     title: "Investing Strategies for Beginners: A Step-by-Step Guide",
-    //     description:
-    //         "Learn essential investment concepts, risk management techniques, and how to build a diversified portfolio.",
-    //     imageSrc: "/media/5.png",
-    //     containerClassName: "col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]",
-    //     imageClassName: "absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl",
-    // },
+    {
+        title: "Maximizing Rental Income: Tips for Property Owners",
+        description:
+            "Learn how to increase your rental income with strategic property upgrades, effective marketing, and tenant management.",
+        imageSrc: "/media/5.jpg",
+        containerClassName: "col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]",
+        imageClassName: "absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl",
+    },
 ];
-function LatestBLog() {
+
+function LatestBlog() {
     return (
         <div className="mx-3">
             <div className="my-10">
                 {/* Title Section */}
                 <h2 className="max-w-7xl pl-4 my-20 text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-                    Read our Latest Blog
+                    Read Our Latest Real Estate Insights
                 </h2>
 
                 {/* Blog Cards Section */}
@@ -73,7 +75,7 @@ function LatestBLog() {
 
             </div>
             <div className="w-full max-w-7xl mx-auto my-10">
-                <WobbleCard className="bg-[#7C3AED] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <WobbleCard className="bg-red-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex items-center gap-4 md:gap-6">
                         <div className="bg-white/20 rounded-2xl p-3">
                             <div className="relative">
@@ -82,22 +84,29 @@ function LatestBLog() {
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Join Our Newsletter</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Subscribe to Our Real Estate Newsletter</h2>
                             <p className="text-sm md:text-base text-white/80">
-                                Stay updated with exclusive offers, tips, and insights. Subscribe now!
+                                Get the latest updates, market trends, and property insights directly to your inbox.
                             </p>
                         </div>
                     </div>
                     <div className="w-full md:w-auto">
-                        <div className="relative">
-                            <Input
-                                type="email"
-                                placeholder="Email address"
-                                className="w-full md:w-100 pr-24 rounded-full bg-white text-black placeholder:text-gray-500"
-                            />
-                            <Button className="absolute right-0 top-2 rounded-full px-4 bg-black text-white hover:bg-gray-800">
-                                Subscribe
-                            </Button>
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                            <div className="flex flex-row items-center rounded-[15px] overflow-hidden shadow-md">
+                                <div className="relative w-full">
+                                    <input
+                                        type="text"
+                                        placeholder="Enter your email address..."
+                                        className="flex-1 bg-transparent border-none outline-none w-full bg-white placeholder-neutral-400 px-4 py-3"
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="bg-yellow-600 text-white px-6 py-3 font-semibold hover:bg-slate-900 transition duration-500 ease-in-out"
+                                >
+                                    Subscribe
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </WobbleCard>
@@ -106,4 +115,4 @@ function LatestBLog() {
     );
 }
 
-export default LatestBLog;
+export default LatestBlog;

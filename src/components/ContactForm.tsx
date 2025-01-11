@@ -16,15 +16,13 @@ export const ContactForm = () => {
     return (
         <div>
             <div className="heading flex justify-center items-center flex-col mx-4">
-                <h1 className="text-5xl md:text-7xl font-bold mt-20">Have a Question ?</h1>
+                <h1 className="text-5xl md:text-6xl font-bold mt-20">Have a Question ?</h1>
                 <p className="text-xl my-4">We are here to help. Send us your query and our team will get back to you as soon as possible!!</p>
             </div>
             <div id="" className=" container mx-auto flex flex-col lg:flex-row justify-between gap-16 py-20 px-6 lg:px-12">
-                {/* FAQ Section */}
 
                 <FAQ/>
 
-                {/* Contact Us Section */}
                 <div className="max-w-md w-full mx-auto rounded-2xl md:rounded-2xl p-4 md:p-8 shadow-input border bg-white dark:bg-black">
                     <h2 className="font-bold text-2xl text-neutral-800 dark:text-neutral-200">
                         Contact Us

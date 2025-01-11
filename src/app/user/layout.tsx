@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider publishableKey={clerkKey}>
-      <html lang="en">
+      <html lang="en" className="">
         <head>
           {/* Meta and icon tags */}
           <link rel="icon" href="/favicon.ico" />
