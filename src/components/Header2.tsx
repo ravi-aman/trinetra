@@ -165,6 +165,20 @@ export const Header2 = () => {
                                                     Mohan Garden, Uttam Nagar, New Delhi, 110059
                                                 </p>
                                             </div>
+                                            <div className="icon flex text-white bg-blue-500 px-10 py-3 justify-between gap-5">
+                                                <a href="https://www.facebook.com/ravikant.tiwari.547727" target="_blank " className="hover:text-blue-900">
+                                                    <FaFacebookF className="w-50" />
+                                                </a>
+                                                <a href="https://www.instagram.com/trinetraa.tec/" target="_blank" className="hover:text-blue-900">
+                                                    <FaInstagram />
+                                                </a>
+                                                <a href="https://www.linkedin.com/in/ravikant-tiwari-6b4b6a1b4/" target="_blank" className="hover:text-blue-900">
+                                                    <FaLinkedin />
+                                                </a>
+                                                <a href="https://twitter.com/Ravikan69319285" target="_blank" className="hover:text-blue-900">
+                                                    <FaTwitter />
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </SheetContent>
