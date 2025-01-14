@@ -39,7 +39,7 @@ function Footer() {
                                 </ul>
                             </div>
                             <div className='flex justify-start items-start flex-col h-full '>
-                                <h3 className="text-lg font-semibold mb-4 ">Policies</h3>
+                                <h3 className="text-lg font-semibold mb-4">Policies</h3>
                                 <ul className="space-y-2 text-black font-bold">
                                     <li><a href="#">Privecy polices</a></li>
                                     <li><a href="#">Disclamer</a></li>
