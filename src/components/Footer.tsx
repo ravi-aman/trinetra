@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Instagram, Facebook, Linkedin, Mail } from 'lucide-react'
-import { FaTwitter, FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaEnvelope, FaCalculator, FaPhone, FaMap, FaMapMarked } from "react-icons/fa";
 import Image from "next/image";
 function Footer() {
     return (
@@ -51,10 +51,18 @@ function Footer() {
                         <div className='font-bold justify-center w-full'>
                             <h3 className="text-lg font-semibold mb-4">Contact</h3>
                             <div className='text-black'>
-                                <p className="mb-2">A-67,vijay Nagar Mohan Garden</p>
-                                <p className="mb-4">New Delhi, 110059</p>
-                                <p className=" mb-2">+91 8744883594 , +91 9220860414</p>
-                                <p className="">support@trinetraa.tech</p>
+                                <a href="mailto:support@trinetraa.tech" className='flex flex-row gap-2 justify-start items-center w-full' >
+                                    <FaMapMarked className="text-black" />
+                                    <p className="">Mohan Garden New Delhi-110059</p>
+                                </a>
+                                <a href="mailto:support@trinetraa.tech" className='flex flex-row gap-2 justify-start items-center w-full my-2' >
+                                    <FaPhone className="text-black" />
+                                    <p className="">+91 9220860414 , +91 8744883594</p>
+                                </a>
+                                <a href="mailto:support@trinetraa.tech" className='flex flex-row gap-2 justify-start items-center w-full' >
+                                    <FaEnvelope className="text-black" />
+                                    <p className="">support@trinetraa.tech</p>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -158,7 +158,6 @@ export const Header2 = () => {
                                                 <FaEnvelope className="text-black" />
                                                 <p className="text-black">support@trinetraa.tech</p>
                                             </div>
-
                                             <div className="flex items-center gap-2">
                                                 <FaMapMarkerAlt className="text-black" />
                                                 <p className="text-black/60">
