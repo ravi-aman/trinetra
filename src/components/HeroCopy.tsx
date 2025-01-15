@@ -6,11 +6,8 @@ import { ImagesSlider } from "@/components/ui/images-slider";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { IconSearch, IconLocation } from "@tabler/icons-react";
-import BloodFilterComponent from './BloodFilterComponent';
-import BloodResultComponent from './BloodResultComponent';
+import { validateForm } from "@/utils/validation";
 
-type Tag = string;
 
 export function HeroCopy() {
     const images = [
@@ -22,67 +19,61 @@ export function HeroCopy() {
         "/media/8.jpg",
     ];
 
-    const [searchQuery, setSearchQuery] = useState<string>('');
-    const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
-    const [suggestions, setSuggestions] = useState<string[]>([]);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        preferTime: "",
+    });
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
-    const tags = ["Rent", "Home", "Plot/Land", "Commercial", "Other"];
-
-    const metroStations: string[] = [
-        "Samaypur Badli", "Rohini Sector 18", "Rohini Sector 16", "Rithala", "Pitampura",
-        "Kohat Enclave", "Netaji Subhash Place", "Shalimar Bagh", "Azadpur",
-        "Delhi University (North Campus)", "Vishwavidyalaya", "Civil Lines",
-        "Chandni Chowk", "Rajiv Chowk", "Connaught Place", "Barakhamba Road", "Mandi House",
-        "ITO", "Pragati Maidan", "Supreme Court", "Central Secretariat", "Udyog Bhawan",
-        "Dhaula Kuan", "Vasant Vihar", "Munirka", "R.K. Puram", "Dwarka Sector 21",
-        "Rajouri Garden", "Janakpuri West", "Janakpuri East", "Uttam Nagar East", "Uttam Nagar West",
-        "Rohini West", "Rohini East", "Shalimar Bagh", "Azadpur", "Majlis Park", "Gokulpuri",
-        "Jhilmil", "Karkarduma", "Kashmere Gate", "Tis Hazari", "Vikas Puri", "Lajpat Nagar",
-        "Saket", "Hauz Khas", "IIT Delhi", "Qutub Minar", "Chattarpur", "Badarpur Border",
-        "New Delhi", "Shivaji Stadium", "Dhaula Kuan", "Aerocity", "IGI Airport Terminal 3",
-        "Janakpuri West", "Dwarka Sector 21", "MG Road", "Sultanpur", "Chhattarpur", "Saket",
-        "Okhla Bird Sanctuary", "Majlis Park", "Durgabai Deshmukh South Campus", "Lajpat Nagar",
-        "Hazrat Nizamuddin", "Sarai Kale Khan", "Ashram", "Kailash Colony", "Greater Kailash",
-        "Nehru Place", "Kalkaji Mandir", "Okhla NSIC", "Kirti Nagar", "Moti Nagar", "Ramesh Nagar",
-        "Subhash Nagar", "Janakpuri East", "Dwarka Mor", "Dwarka Sector 25", "Bijwasan", "Vasant Kunj"
-    ];
-
-    const router = useRouter();
-
-    const toggleTag = (tag: Tag) => {
-        setSelectedTags((prev) =>
-            prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
-        );
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const query = e.target.value;
-        setSearchQuery(query);
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
 
-        if (query) {
-            const filteredSuggestions = metroStations.filter((station) =>
-                station.toLowerCase().includes(query.toLowerCase())
-            );
+        // Ensure default values for optional fields
+        const defaultFormData = {
+            ...formData,
+            message: formData.message || "No message provided.",
+            preferTime: formData.preferTime || "No preferred time specified.",
+        };
 
-            setSuggestions(filteredSuggestions.slice(0, 4));
-        } else {
-            setSuggestions([]);
+        const validationError = validateForm(defaultFormData);
+        if (validationError) {
+            setError(validationError);
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/landingPage/submitForm", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(defaultFormData),
+            });
+
+            if (response.ok) {
+                setSuccess("Form submitted successfully! Check your email.");
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                    preferTime: "",
+                });
+            } else {
+                throw new Error("Failed to submit form. Please try again.");
+            }
+        } catch (err: any) {
+            setError(err.message);
         }
     };
 
-    const handleSuggestionClick = (station: string) => {
-        setSearchQuery(station);
-        setSuggestions([]);
-    };
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const queryParams = new URLSearchParams();
-        queryParams.set('search', searchQuery);
-        selectedTags.forEach((tag) => queryParams.append('tags', tag));
-
-        router.push(`/user/search?${queryParams.toString()}`);
-    };
 
     return (
         <ImagesSlider className="md:h-[40rem] py-10" images={images}>
@@ -112,16 +103,19 @@ export function HeroCopy() {
                                 Let us assist you! Book a free call to explore the best solutions tailored to your needs.
                             </p>
 
-                            <form className="my-8 md:my-5 flex flex-col gap-4" onSubmit={handleSubmit}>
+                            <form className="my-8 md:my-5 flex flex-col gap-4" >
                                 <LabelInputContainer>
                                     <Label htmlFor="name">
                                         Your Full Name <span className="text-red-600">*</span>
                                     </Label>
                                     <Input
                                         id="name"
+                                        name="name"
                                         placeholder="Enter your full name"
                                         type="text"
                                         required
+                                        value={formData.name}
+                                        onChange={handleChange}
                                     />
                                 </LabelInputContainer>
 
@@ -133,6 +127,9 @@ export function HeroCopy() {
                                         id="number"
                                         placeholder="Enter your phone number"
                                         type="number"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </LabelInputContainer>
@@ -145,6 +142,9 @@ export function HeroCopy() {
                                         id="email"
                                         placeholder="Enter your email address"
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </LabelInputContainer>
@@ -155,9 +155,13 @@ export function HeroCopy() {
                                         id="availability"
                                         placeholder="Select your available time"
                                         type="date"
+                                        name="preferTime"
+                                        value={formData.preferTime}
+                                        onChange={handleChange}
                                     />
                                 </LabelInputContainer>
-
+                                {error && <p className="text-red-500">{error}</p>}
+                                {success && <p className="text-green-500">{success}</p>}
                                 <button
                                     className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                                     type="submit"
@@ -166,6 +170,7 @@ export function HeroCopy() {
                                     <BottomGradient />
                                 </button>
                             </form>
+
                         </div>
 
 
