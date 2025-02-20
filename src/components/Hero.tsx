@@ -69,15 +69,12 @@ export function ImagesSliderDemo() {
         setSuggestions([]);
     };
 
-    // Redirect user to /user/search with query and selected tags
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Construct query parameters from search query and selected tags
         const queryParams = new URLSearchParams();
         queryParams.set('search', searchQuery);
         selectedTags.forEach((tag) => queryParams.append('tags', tag));
 
-        // Redirect to /user/search with query params
         router.push(`/user/search?${queryParams.toString()}`);
     };
 

@@ -6,9 +6,23 @@ import { ImagesSlider } from "@/components/ui/images-slider";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { validateForm } from "@/utils/validation";
+// import { validateForm } from "@/utils/validation";
 
+export const validateForm = (formData: { name: string; email: string; phone: string }) => {
+    if (!formData.name || formData.name.length < 3) {
+        return "Name must be at least 3 characters.";
+    }
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+        return "Enter a valid email address.";
+    }
+    if (
+        !formData.phone ||
+        !/^\d{10}$/.test(formData.phone)
+    )
+        return "Please enter a valid 10-digit contact number.";
 
+    return null;
+};
 export function HeroCopy() {
     const images = [
         "/media/1.jpg",
@@ -37,7 +51,6 @@ export function HeroCopy() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Ensure default values for optional fields
         const defaultFormData = {
             ...formData,
             message: formData.message || "No message provided.",
@@ -51,7 +64,7 @@ export function HeroCopy() {
         }
 
         try {
-            const response = await fetch("/api/landingPage/submitForm", {
+            const response = await fetch(`${process.env.API_BASE_URL}${process.env.SUBMIT_FORM_ENDPOINT}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(defaultFormData),
@@ -69,8 +82,10 @@ export function HeroCopy() {
             } else {
                 throw new Error("Failed to submit form. Please try again.");
             }
-        } catch (err: any) {
-            setError(err.message);
+        } catch (error: any) {
+            setError(error.message);
+            alert("Form submission error:" + error);
+
         }
     };
 
